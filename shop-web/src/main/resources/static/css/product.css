@@ -1,0 +1,148 @@
+a {
+    text-decoration: none !important;
+    color: var(--main-color);
+}
+
+.section-products {
+    padding: 50px 0;
+}
+
+.section-products .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-products .header {
+    margin-bottom: 50px;
+}
+
+.section-products .header h3 {
+    font-size: 1rem;
+    color: var(--main-color);
+    font-weight: 500;
+}
+
+.section-products .header h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #444444;
+}
+
+.section-products .list_products {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 50px 200px;
+    padding: 0 150px;
+}
+
+.section-products .list_products .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    padding: 30px;
+}
+
+.section-products .list_products .item img {
+    width: 100%;
+}
+
+.section-products .part-1 {
+    position: relative;
+    /*height: 290px;*/
+    /*max-height: 290px;*/
+    /*margin-bottom: 20px;*/
+    /*overflow: hidden;*/
+}
+
+.section-products .part-1 .cart_btn {
+    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgba(0,0,0,0.1);
+    text-align: end;
+    opacity: 0;
+}
+
+.section-products .part-1 .cart_btn>a{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 35px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.section-products .part-1 .cart_btn:hover {
+    animation: showBtn ease 0.5s;
+    opacity: 1;
+}
+
+.section-products .part-1 .cart_btn button a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #000000;
+    z-index: 1;
+}
+
+.section-products .part-1 .cart_btn button a:hover {
+    background-color: var(--main-color);
+}
+
+
+.section-products .part-2 {
+    padding: 15px;
+    text-align: center;
+}
+
+.section-products .part-2 .product-price::after {
+    content: "đ";
+}
+
+.button_page {
+    display: flex;
+    justify-content: center;
+}
+
+.button_page button {
+    margin: 10px;
+    border: none;
+}
+
+.button_page button a {
+    display: block;
+    padding: 10px 15px;
+}
+
+.button_page button .over_btn {
+    color: #000000;
+}
+
+.button_page button .normal_btn {
+    color: #ffffff;
+    background-color: var(--main-color);
+}
+
+
+@keyframes showBtn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

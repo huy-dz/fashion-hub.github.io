@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: html_head"/>
+<body>
+<div th:replace="fragment :: html_menu"></div>
+<div class="sub_header"></div>
+<div id="content">
+    <section class="section-products">
+        <div class="container">
+            <div class="header">
+                <h2>Danh sách sản phẩm</h2>
+            </div>
+            <div class="list_products">
+                <div class="item" th:each="i : ${product}">
+                    <div class="part-1">
+                        <img th:src="${i.getImg()}" alt="">
+                        <div class="cart_btn">
+                            <a th:href="@{/{categories}/{product}/(categories=${i.getCategory().getCode()}, product=${i.getCode()})}"></a>
+
+                            <button>
+                                <a th:href="@{/cart/add/{id}(id=${i.getId()})}">Thêm vào giỏ hàng</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="part-2">
+                        <h3 class="product-title" th:text="${i.getName()}">Here Product Title</h3>
+                        <h4 class="product-price" th:text="${i.getPrice()}"></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="button_page" th:if="${product.totalPages > 1 && name == null}">
+                <button>
+                    <a class="over_btn" th:if="${product.number == 0}">&#8592;</a>
+                    <a class="normal_btn" th:if="${product.number - 1 >= 0}" th:href="@{'?page=' + ${product.number - 1}}">&#8592;</a>
+                </button>
+                <button>
+                    <a class="over_btn" th:if="${product.number == product.totalPages - 1}">&#8594;</a>
+                    <a class="normal_btn" th:if="${product.number + 1 < product.totalPages}" th:href="@{'?page=' + ${product.number + 1}}">&#8594;</a>
+                </button>
+            </div>
+
+            <div class="button_page" th:if="${product.totalPages > 1 && name != null}">
+                <button>
+                    <a class="over_btn" th:if="${product.number == 0}">&#8592;</a>
+                    <a class="normal_btn" th:if="${product.number - 1 >= 0}"
+                       th:href="@{'search?name=' + ${name} + '&page=' + ${product.number - 1}}">&#8592;</a>
+                </button>
+                <button>
+                    <a class="over_btn" th:if="${product.number == product.totalPages - 1}">&#8594;</a>
+                    <a  class="normal_btn" th:if="${product.number + 1 < product.totalPages}"
+                       th:href="@{'search?name=' + ${name} + '&page=' + ${product.number + 1}}">&#8594;</a>
+                </button>
+            </div>
+
+        </div>
+    </section>
+</div>
+<div th:replace="fragment :: html_footer"></div>
+</body>
+</html>

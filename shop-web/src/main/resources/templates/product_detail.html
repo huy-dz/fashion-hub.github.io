@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: html_head" />
+<body>
+<div th:replace="fragment :: html_menu"></div>
+<div class="sub_header"></div>
+<div id="content">
+    <div class="product_detail-container">
+            <div class="product_img">
+                <img th:src="${product.getImg()}" width="400" height="400">
+            </div>
+            <div class="product_info">
+                <div class="title_product" th:text="${product.getName()}">Men's T shirts V Neck Blue Color</div>
+
+                <div class="price"> Đơn giá:
+                    <span th:text="${product.getPrice()}"></span>
+                </div>
+
+                <div class="size">
+                    <form>
+                        <label>Size:</label>
+                        <input type="radio" value="S" name="size">
+                        <label>S</label>
+
+                        <input type="radio" value="M" name="size">
+                        <label>M</label>
+
+                        <input type="radio" value="L" name="size">
+                        <label>L</label>
+                    </form>
+
+                </div>
+
+                <div class="color">
+                    Màu: Đen / Trắng / Xanh
+                </div>
+
+                <div class="add_btn">
+                    <button>
+                        <a th:href="@{/cart/add/{id}(id=${product.getId()})}">THÊM VÀO GIỎ HÀNG</a>
+                    </button>
+
+                </div>
+                <div class="description">
+                    <h3>Mô tả</h3>
+                    <p style="width:500px;">Áo khoác thun nỉ, đơn giản và năng động. Điểm nhấn nổi bật cánh tay, mặt trong
+                        có túi tiện dụng. Mặc đi nắng hoặc trời se lạnh cực tốt.<br>
+                        Chất liệu: vải nỉ da cá cao cấp<br>
+                        Hướng dẫn bảo quản:<br>
+                        Không dùng hóa chất tẩy.</p>
+                </div>
+
+            </div>
+
+    </div>
+</div>
+<div th:replace="fragment :: html_footer"></div>
+
+</body>
+</html>

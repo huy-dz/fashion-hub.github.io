@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: html_head" />
+<body>
+<div th:replace="fragment :: html_menu"></div>
+<div class="sub_header"></div>
+<!-- <div id="slider"></div> -->
+<div id="content" class="content1" th:action="@{/cart/update}">
+    <div class="cart_left">
+        <h1>Giỏ hàng của bạn</h1>
+        <div class="cart_container">
+            <h3>Bạn đang có <span th:text="${count}">2</span> sản phẩm trong giỏ hàng</h3>
+            <div class="item" th:each="i: ${cartItem}">
+                <div class="item_img item">
+                    <img th:src="${i.getProduct().getImg()}" alt="">
+                </div>
+                <div class="item_info">
+                    <h3 th:text="${i.getProduct().getName()}">Áo Khoác Dù 2 Lớp AKD0030</h3>
+                    <h5>XL/Đen</h5>
+                </div>
+                <div class="item_quantity">
+                    <form th:action="@{/cart/update}" method="post">
+                        <input type="number" name="quantity" min="1" max="10" th:value="${i.getQuantity()}" required/>
+                    </form>
+
+                </div>
+                <div class="item_price">
+                    <h3 class="product_price" th:text="${i.getProduct().getPrice()}">250.000đ</h3>
+                </div>
+                <div class="item_total-price">
+                    <h3>Thành tiền</h3>
+                    <span class="total_price" th:text="${i.getProduct().getPrice()*i.getQuantity()}">250.000đ</span>
+                    <div class="img_remove">
+                        <a th:href="@{/cart/remove/{productId}(productId=${i.getProduct().getId()})}">
+                            <img src="/icons/delete.svg" alt="abc">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart_right">
+        <a th:href="@{/}">Tiếp tục mua hàng
+            <span>&#8594;</span>
+        </a>
+        <div class="order_box">
+            <h3>Thông tin đơn hàng</h3>
+            <p>
+                Tổng tiền:
+                <span th:text="${totalPrice}">250.000đ</span>
+            </p>
+            <button>
+                <a th:href="@{/checkout}">Thanh toán</a>
+            </button>
+        </div>
+    </div>
+</div>
+<div th:replace="fragment :: html_footer"></div>
+</body>
+</html>

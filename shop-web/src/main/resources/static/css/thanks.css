@@ -1,0 +1,19 @@
+.thanks_view {
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/img/thanks-bg.png");
+    background-size: 100%;
+}
+
+.thanks_view h1 {
+    padding: 100px;
+    font-size: 50px;
+    color: var(--main-color);
+}
+
+.thanks_view a {
+    font-size: 20px;
+}

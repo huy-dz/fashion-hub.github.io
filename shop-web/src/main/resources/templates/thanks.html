@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment :: html_head" />
+<body>
+<div th:replace="fragment :: html_menu"></div>
+<div class="sub_header"></div>
+<div id="content">
+    <div class="thanks_view">
+        <h1>Bạn đã đặt hàng thành công!</h1>
+        <a th:href="@{/}">
+           Tiếp tục mua hàng <span>&#8594;</span>
+        </a>
+    </div>
+</div>
+<div th:replace="fragment :: html_footer"></div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+:root {
+    --main-color: #cc0060;
+    /*--bg-color: #c5c5c5;*/
+    --bg-color: #ffffff;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+html {
+    background-color: #d4d4d4;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 0 50px;
+    height: 106px;
+    width: 100%;
+    background-color: var(--bg-color);
+    z-index: 1;
+}
+
+.sub_header {
+    height: 106px;
+}
+
+#header .logo {
+    flex-grow: 1;
+}
+
+#header .logo img {
+    width: 200px;
+}
+
+#header .action {
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+}
+
+#header .action img {
+    width: 24px;
+}
+
+#header .action .search_box {
+    margin-right: 5px;
+    padding: 0 20px;
+    display: flex;
+    background-color: #dbd7d7;
+    border-radius: 35px;
+}
+
+#header .action .search_box form {
+    display: flex;
+}
+
+#header .action .search_box input {
+    border: none;
+    outline: none;
+    background-color: #dbd7d7;
+}
+
+#header .action .account {
+    padding: 5px;
+}
+
+#header .action .cart {
+    padding: 5px;
+}
+
+#header .menu .list {
+    list-style: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+}
+
+#header .menu .list li {
+    display: inline-block;
+}
+
+#header .menu .list li a {
+    padding: 20px;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+}
+
+#header .menu .list li a:hover {
+    color: var(--main-color);
+}
+
+#slider {
+    height: 1120px;
+    background-image: url(/img/somitayngan_12f87a86be724f41b29c34785402987b.jpg) ;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+
+
+#footer {
+    height: auto;
+    background-color: var(--bg-color);
+}
+
+#footer .container {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#footer img {
+    margin: 10px;
+    width: 28px;
+}
+
+#footer h2 {
+    padding-left: 10px;
+}
+
+#footer .shop_info {
+    padding: 20px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer .shop_info p {
+    display: flex;
+    align-items: center;
+}
+
+
+#footer .contact {
+    padding: 20px;
+    margin-left: 50px;
+}

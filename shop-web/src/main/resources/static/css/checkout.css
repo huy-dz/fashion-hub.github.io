@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.checkout_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout_container .cart_left {
+    margin: 50px 50px;
+    padding: 50px;
+    border-right: solid #000 1px;
+}
+
+.checkout_container .cart_left .total_price {
+    margin-top: 50px;
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.checkout_container .cart_left .total_price span::after {
+    content: "đ";
+}
+
+.checkout_container .checkout_info {
+    margin: 50px;
+    padding: 100px;
+}
+
+.checkout_container .checkout_info input {
+    padding: 8px;
+    margin: 5px 0;
+    margin-bottom: 15px;
+    min-width: 300px;
+    border: rgb(185, 185, 185) solid 1px;
+    outline: none;
+}
+
+.checkout_container .checkout_info .confirm_btn {
+    margin-top: 30px;
+    background-color: var(--main-color);
+    color: #ffffff;
+}
+
+.checkout_container .checkout_info .confirm_btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
